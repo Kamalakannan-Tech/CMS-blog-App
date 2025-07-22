@@ -20,6 +20,9 @@
 }
 
 body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
