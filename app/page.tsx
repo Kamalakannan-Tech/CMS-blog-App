@@ -1,7 +1,7 @@
-"use client"
-import Image from "next/image";
-import Blogs from "../components/Blogs"
+"use client";
+import Blogs from "../components/Blogs";
 import { useEffect, useState } from "react";
+import img from "../public/Netflix-avatar.png"
 
 export default function Home() {
   const [blogs,setBlog]=useState(null);
@@ -27,7 +27,7 @@ export default function Home() {
   <>
     
     {blogs.map((blog) => (
-      <Blogs key={blog.id} image={blog.image} title={blog.title} content={blog.body} />
+      <Blogs key={blog.id} image={img} title={blog.title} content={blog.body} />
     ))}
   </>
 );
