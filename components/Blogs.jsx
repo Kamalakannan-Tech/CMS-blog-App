@@ -1,11 +1,13 @@
 import React from "react";
 import Image from "next/image";
+import { User } from "lucide-react";
+
 function Blogs(props) {
   return (
     <>
-      <div className="max-w-sm rounded my-10 overflow-hidden shadow-lg">
+      <div className="w-[400px] h-[500px]  rounded-lg my-5 overflow-hidden shadow-lg group hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-0">
         <Image
-          className="w-full"
+          className="w-full group-hover:scale-105 transition-transform duration-300"
           src={props.image}
           width={100}
           height={100}
@@ -16,9 +18,20 @@ function Blogs(props) {
           alt="Blogs cover image"
         />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{props.title}</div>
-          <p className="text-gray-700 text-base">{props.author}</p>
-          <p className="text-gray-700 text-base leading-relaxed line-clamp-5 mb-4">
+          <div className="flex justify-between text-gray-700 text-base">
+            <div className="flex justify-end text-gray-700 text-base">
+              <User className="mt-1 w-4 h-4 mr-1" />
+              <span>{props.author}</span>
+            </div>
+            <div className="inline-block text-gray-700 text-base">
+              {props.created_at}
+            </div>
+          </div>
+
+          <div className="font-bold text-xl mb-2 group-hover:text-blue-500 line-clamp-2">
+            {props.title}
+          </div>
+          <p className="text-gray-700 text-base leading-relaxed line-clamp-3 mb-4 ">
             {props.content}
           </p>
         </div>
